@@ -1,0 +1,3 @@
+.artthumb{display:inline-block}.block{border-top:1px solid;margin-bottom:20px;padding-top:10px}a{color:blue}
+.artthumb p{margin: 0px;width:88px;height:31px;background:url(data/thumb.png);}img {filter:none;user-drag: none;-khtml-user-drag: none;-webkit-user-drag: none;-moz-user-select: none;-khtml-user-drag:none;}img.blogimg, img.art {max-width: 500px;}p.hosoku{margin: 0;font-size: 13px;}ul {margin: 0;}.deco-bokashi{filter:blur(.3em)}.deco-bokashi:is(:hover,:active){filter:revert}
+@media (prefers-color-scheme:dark){body{background-color:#c8c8c8;}}li{list-style-position: inside;}

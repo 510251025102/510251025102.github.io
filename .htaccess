@@ -1,0 +1,81 @@
+<Files "admin.php">
+# AccessControl IP/HOST
+order deny,allow
+deny from all
+allow from 114.177.65.133
+</Files>
+<Files "upload.php">
+# AccessControl IP/HOST
+order deny,allow
+deny from all
+allow from 114.177.65.133
+</Files>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm|css|js|)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+
+# Wayback Machine / archive.org block
+SetEnvIfNoCase User-Agent "archive.org_bot" bad_bot
+SetEnvIfNoCase User-Agent "ia_archiver" bad_bot
+SetEnvIfNoCase User-Agent "heritrix" bad_bot
+
+<RequireAll>
+  Require all granted
+  Require not env bad_bot
+</RequireAll>
+
+
+# Start AI Bot Prevention
+<IfModule mod_setenvif.c>
+# AI bot User-Agents (example identifiers)
+# Anthropic AI - refers to the AI models from Anthropic, like Claude.
+SetEnvIfNoCase User-Agent "anthropic-ai" bad_bot
+# Claude-Web - another identifier for Anthropic's Claude AI accessed through web interfaces.
+SetEnvIfNoCase User-Agent "Claude-Web" bad_bot
+# Applebot-Extended - Apple's web crawling bot used for indexing content.
+SetEnvIfNoCase User-Agent "Applebot-Extended" bad_bot
+# Bytespider - web crawler operated by Byte, a search engine.
+SetEnvIfNoCase User-Agent "Bytespider" bad_bot
+# CCBot - CCBot is a crawler operated by Common Crawl, indexing the web for public access.
+SetEnvIfNoCase User-Agent "CCBot" bad_bot
+# ChatGPT-User - identifies bots accessing content through OpenAI's ChatGPT.
+SetEnvIfNoCase User-Agent "ChatGPT-User" bad_bot
+# Cohere-ai - represents the AI models from Cohere, designed for NLP tasks.
+SetEnvIfNoCase User-Agent "cohere-ai" bad_bot
+# Diffbot - automated service to extract data from websites for various purposes.
+SetEnvIfNoCase User-Agent "Diffbot" bad_bot
+# FacebookBot - web crawler used by Facebook for collecting data from websites.
+SetEnvIfNoCase User-Agent "FacebookBot" bad_bot
+# Google-Extended - Google's extended bot that is used to gather content for various Google services.
+SetEnvIfNoCase User-Agent "Google-Extended" bad_bot
+# GPTBot - identifies bots based on OpenAI's GPT models, possibly for data scraping or web interactions.
+SetEnvIfNoCase User-Agent "GPTBot" bad_bot
+# ImagesiftBot - web crawler specifically designed to index and analyze images.
+SetEnvIfNoCase User-Agent "ImagesiftBot" bad_bot
+# PerplexityBot - an AI-powered bot designed for search and information retrieval.
+SetEnvIfNoCase User-Agent "PerplexityBot" bad_bot
+# OmigiliBot - a web crawler from Omigili used to index web content.
+SetEnvIfNoCase User-Agent "OmigiliBot" bad_bot
+# Omigili - another identifier for the Omigili service used for crawling the web.
+SetEnvIfNoCase User-Agent "Omigili" bad_bot
+
+# Deny access for matched bots
+Order Allow,Deny
+Allow from all
+Deny from env=bad_bot
+
+</IfModule>
+# End AI Bot Prevention
+
+AuthUserFile /home/users/2/oops.jp-5102/web/.htpasswd
+AuthGroupFile /dev/null
+AuthName "調整中です！"
+AuthType Basic
+require valid-user
+
+
