@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta https-equiv="Imagetoolbar" content="no"><meta name="pinterest" content="nopin" /><meta name="robots" content="noindex,nofollow,noarchive"><meta name="bingbot" content="noindex,nofollow,noarchive"><meta name="robots" content="noai, noimageai"><link href="../css.css" type="text/css" rel="stylesheet"><script>document.addEventListener('contextmenu', function(e) {e.preventDefault();});</script></head><body oncontextmenu="return false;"style="overflow-x:hidden;">
+<font size="4"><img src="../img/44.gif"> <b>Kritaでのディザー加工覚え書き</b></font><br><div class="block">
+
+私のイラストの中には「レトロなゲームを彷彿とさせる、ドットな影付け」が施されているものがいくつかある。それをどうやって行っているのかを紹介します。<br><br>私がやっていることは<a href="https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%A3%E3%82%B6#%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E7%94%BB%E5%83%8F%E3%81%A8%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E5%87%A6%E7%90%86" target="_blank">ディザリング</a>（<a href="https://en.wikipedia.org/wiki/Dither" target="_blank">Dithering</a>）の部分的な再現に近いです。<br>なお、ソフトウェアはKritaを使っています。<br><img src="ditherdayo.png"class="blogimg"></div>
+
+<font size="4"><img src="../img/44.gif"> <b>やり方</b></font><br><div class="block">
+[1]　まずは何でもいいので絵を用意してください。グラデーションが多ければ多いほどディザリングが綺麗になります。キャンバスサイズは小さめにすることをお勧めします。<br>
+<img src="20261011.png"class="blogimg">
+<br><br>
+
+[2]　ピクセルテクスチャのようなパターン画像を用意してください。<br>
+<img src="dither.png"class="blogimg"><br><br>
+
+[3]　新しいレイヤーを追加してキャンバス全体を覆うように貼り付け、レイヤースタイルを「オーバーレイ（overlay）」にしてください。<br><img src="20261011a.png"class="blogimg"><br><br>
+
+[4]　パターンの不透明度を15%ぐらいに下げ、イラストのレイヤーと結合してください。<br>
+<img src="20261011b.png"class="blogimg"><br><br>
+
+[5]　「ポスタリゼーション（Filter ＞Posterize）」フィルターを開きます。<br>
+<img src="20261011d.png"class="blogimg"><br><br>
+
+[6]　好みの質感になるまで数値を下げてください。10以下がおすすめです。色が変になりますが、気にしないでください。<br><img src="20261011f.png"class="blogimg"><br><br>
+
+[7]　「減色諧調（Filter ＞Index Colors）」フィルターを開きます。<br>
+<img src="20261011c.png"class="blogimg"><br><br>
+
+[8]　好きな色を配置して、納得がいくまで調整すれば完成です。<br>
+<img src="20261011e.png"class="blogimg">
+
+<br><hr>2026/10/08
+</div></body></html>
